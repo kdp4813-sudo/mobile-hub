@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Hub | Smartphone Store Demo</title>
+<meta name="description" content="Explore smartphones and accessories at Mobile Hub. Sample online mobile store demo.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--ink:#172033;--muted:#64748b;--blue:#2457d6;--pale:#eef3ff;--line:#e5eaf2;--bg:#f7f9fc}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#101a2d;color:white;padding:18px max(5%,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:22px;font-weight:800;letter-spacing:.4px}.brand span{color:#8fb0ff}
+nav{display:flex;gap:18px;font-size:14px}nav a{color:white;text-decoration:none}
+.hero{max-width:1100px;margin:28px auto;padding:42px 5%;border-radius:24px;background:linear-gradient(120deg,#101a2d,#294d91);color:white;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center}
+.hero small{letter-spacing:2px;color:#c8d8ff}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.05;margin:12px 0}.hero p{color:#dbe5ff;line-height:1.6}.hero-art{font-size:100px;text-align:center;filter:drop-shadow(0 12px 14px #0005)}
+.btn{border:0;border-radius:12px;padding:12px 17px;background:var(--blue);color:white;font-weight:700;cursor:pointer}.btn.light{background:white;color:#172033}.wrap{max-width:1100px;margin:30px auto;padding:0 5%}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}.section-head h2{margin:0 0 6px}.muted{color:var(--muted);font-size:14px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter{border:1px solid var(--line);background:white;border-radius:30px;padding:9px 15px;cursor:pointer}.filter.active{background:var(--pale);border-color:#9bb6ff;color:#173d9e}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 5px 18px #15264a08}.photo{height:145px;border-radius:13px;background:linear-gradient(145deg,#f1f4fa,#e5ebf7);display:grid;place-items:center;font-size:68px}.tag{display:inline-block;font-size:11px;background:#eef3ff;color:#3154a5;padding:5px 8px;border-radius:20px;margin-top:12px}.card h3{margin:9px 0 5px;font-size:17px}.price{font-size:18px;font-weight:800;margin:12px 0}.card .btn{width:100%}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}.info>div{background:white;border:1px solid var(--line);border-radius:16px;padding:18px}.info b{display:block;margin-bottom:7px}
+footer{background:#101a2d;color:#d9e2f5;padding:28px 5%;text-align:center;margin-top:45px;font-size:13px}
+.cartbar{position:sticky;bottom:12px;display:flex;justify-content:center;pointer-events:none}.cartbar button{pointer-events:auto;box-shadow:0 8px 24px #15264a33}
+dialog{border:0;border-radius:20px;padding:24px;width:min(92%,460px);box-shadow:0 20px 80px #0004}dialog::backdrop{background:#08132699}input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:6px 0 14px}label{font-size:13px;font-weight:700}.notice{background:#fff8df;border:1px solid #f2df9b;color:#624d12;padding:12px 14px;border-radius:12px;font-size:13px;line-height:1.5;margin:18px 0}
+@media(max-width:800px){.products{grid-template-columns:repeat(2,1fr)}.hero{margin:16px 4%;grid-template-columns:1fr}.hero-art{display:none}.info{grid-template-columns:1fr}}
+@media(max-width:420px){.products{gap:9px}.card{padding:9px}.photo{height:110px;font-size:52px}.card h3{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="brand">📱 MOBILE <span>HUB</span></div><nav><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<section class="hero"><div><small>WELCOME TO MOBILE HUB</small><h1>Find your next<br>smartphone.</h1><p>Explore popular phones and everyday accessories in one place. This is a sample storefront created to demonstrate how an online shop can look.</p><a href="#products"><button class="btn light">Explore products →</button></a></div><div class="hero-art">📱</div></section>
+<main class="wrap">
+<div class="notice"><b>DEMO STORE:</b> Products, prices and stock shown here are fictional examples. Checkout is a preview only; no real order or payment is sent.</div>
+<section id="products"><div class="section-head"><div><h2>Shop products</h2><div class="muted">Browse the sample collection</div></div><div class="muted" id="count">4 products</div></div>
+<div class="filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Apple">Apple</button><button class="filter" data-filter="Samsung">Samsung</button><button class="filter" data-filter="Accessories">Accessories</button></div>
+<div class="products" id="grid">
+<article class="card" data-cat="Apple"><div class="photo">📱</div><span class="tag">IN STOCK · DEMO</span><h3>iPhone 16</h3><div class="muted">128 GB · Midnight</div><div class="price">₹69,900</div><button class="btn add" data-name="iPhone 16" data-price="69900">Add to cart</button></article>
+<article class="card" data-cat="Samsung"><div class="photo">📲</div><span class="tag">IN STOCK · DEMO</span><h3>Galaxy S24</h3><div class="muted">256 GB · Graphite</div><div class="price">₹59,999</div><button class="btn add" data-name="Galaxy S24" data-price="59999">Add to cart</button></article>
+<article class="card" data-cat="Accessories"><div class="photo">🎧</div><span class="tag">IN STOCK · DEMO</span><h3>Wireless Earbuds</h3><div class="muted">Bluetooth · Black</div><div class="price">₹1,499</div><button class="btn add" data-name="Wireless Earbuds" data-price="1499">Add to cart</button></article>
+<article class="card" data-cat="Accessories"><div class="photo">🔌</div><span class="tag">IN STOCK · DEMO</span><h3>Fast Charger</h3><div class="muted">USB-C · 25W</div><div class="price">₹899</div><button class="btn add" data-name="Fast Charger" data-price="899">Add to cart</button></article>
+</div></section>
+<section class="info" id="about"><div><b>🚚 Delivery</b><span class="muted">Delivery details can be added for a real shop.</span></div><div><b>💬 Easy enquiries</b><span class="muted">A real WhatsApp contact can be connected later.</span></div><div><b>⭐ Customer support</b><span class="muted">Add store hours and support details here.</span></div></section>
+<section id="contact"><h2>Visit Mobile Hub</h2><p class="muted">Sample address · Your City, Punjab</p><p class="muted">Phone: 00000 00000 · Replace with the shop's approved contact details.</p></section>
+</main>
+<div class="cartbar"><button class="btn" id="cartBtn">🛒 Cart (0)</button></div>
+<dialog id="checkout"><form method="dialog"><h2>Your demo cart</h2><div id="cartItems" class="muted">Your cart is empty.</div><p id="total" class="price"></p><label for="customer">Customer name (sample)</label><input id="customer" placeholder="Your name"><label for="phone">Phone (do not enter real details in this demo)</label><input id="phone" placeholder="Sample number only"><div class="notice">Preview only. This form does not send customer details anywhere and does not place a real order.</div><button class="btn" id="place" type="button">Preview demo order</button> <button class="filter" value="cancel">Close</button><p id="result" class="muted"></p></form></dialog>
+<footer>© 2026 Mobile Hub Demo · Sample website, not a real shop.</footer>
+<script>
+const cart=[];const dlg=document.getElementById('checkout');const cartBtn=document.getElementById('cartBtn');
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{if(!b.dataset.filter)return;document.querySelectorAll('.filter[data-filter]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.card').forEach(c=>c.hidden=b.dataset.filter!=='All'&&c.dataset.cat!==b.dataset.filter)}));
+function update(){cartBtn.textContent=`🛒 Cart (${cart.length})`;document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`${x.name} — ₹${x.price.toLocaleString('en-IN')}`).join('<br>'):'Your cart is empty.';document.getElementById('total').textContent=cart.length?'Total: ₹'+cart.reduce((s,x)=>s+x.price,0).toLocaleString('en-IN'):''}
+document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>{cart.push({name:b.dataset.name,price:Number(b.dataset.price)});update();cartBtn.textContent=`✓ Added · Cart (${cart.length})`}));
+cartBtn.addEventListener('click',()=>{update();document.getElementById('result').textContent='';dlg.showModal()});
+document.getElementById('place').addEventListener('click',()=>{document.getElementById('result').textContent=cart.length?'Demo order preview complete! No order was sent.':'Add a sample product to your cart first.'});
+</script>
+</body></html>
